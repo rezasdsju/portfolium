@@ -522,6 +522,11 @@
             color: #1A1A1A;
         }
 
+        .whatsapp .profile-icon {
+            background: #25D366;
+            color: white;
+        }
+
         .profile-card h3 {
             font-size: 1.5rem;
             margin-bottom: 15px;
@@ -914,6 +919,64 @@
                 padding-top: 80px;
             }
         }
+
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    z-index: 1000;
+}
+
+.whatsapp-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: #25D366;
+    color: white;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    transition: var(--transition);
+    animation: pulse-whatsapp 2s infinite;
+}
+
+.whatsapp-link:hover {
+    background: #128C7E;
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+}
+
+@keyframes pulse-whatsapp {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+/* Responsive Design for WhatsApp Button */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 55px;
+        height: 55px;
+    }
+    
+    .whatsapp-link {
+        font-size: 1.5rem;
+    }
+}
     </style>
 </head>
 <body>
@@ -942,8 +1005,8 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>Hi, I'm Rezaul Karim Rifat</h1>
-                    <p>I'm a passionate <!--Full Stack--> Web Developer and Data Analyst skilled in Python, Django, React, JavaScript, HTML, and CSS, with strong expertise in data analytical tools like R, SPSS, Excel, and Python for data analysis.<br>
-                     I build dynamic, user-friendly web applications and transform complex datasets into meaningful insights that drive smarter decisions.</p>
+                    <p>I'm a passionate Full-Stack Developer skilled in HTML, CSS, JavaScript, React, Python, Django, SQL<br>
+                     I love building dynamic, user-friendly web applications and continuously learning new technologies to improve my craft.</p>
                     <div class="hero-btns">
                         <a href="#projects" class="btn">View My Work</a>
                         <a href="#contact" class="btn btn-outline">Get In Touch</a>
@@ -962,23 +1025,30 @@
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Passionate Developer & Data Analyst</h3>
-                    <p>I am a results-driven Web developer with expertise in Python, Django, React, JavaScript, HTML, and CSS. I specialize in Data Analysis using Python and Excel, transforming raw data into actionable insights that drive informed decision-making.</p>
-                    <p>Currently, I am advancing my knowledge in Statistics and Data Science at Jahangirnagar University. I have a strong track record of building scalable web applications and delivering data-driven solutions that efficiently solve real-world problems.</p>
-                    <p>My experience spans full-stack development, data visualization, and automation, combining technical expertise with strategic thinking to achieve high-quality results.</p>
+                    <h3>Passionate Full-Stack Developer</h3>
+<p>
+  I am a passionate and results-driven <strong>Full-Stack Web Developer</strong> with hands-on experience in 
+  <strong>HTML, CSS, JavaScript, React, Python, Django, SQL</strong>. I specialize in building dynamic, responsive, and scalable web applications that provide seamless user experiences and efficient performance.
+</p>
+
+<p>
+  Alongside web development, I also have a working knowledge of <strong>Data Analysis</strong> using <strong>Python</strong> and <strong>Excel</strong>, which helps me make data-informed development decisions and optimize application efficiency.
+</p>
+
+<p>
+  Currently, I am expanding my expertise in <strong>Statistics and Data Science</strong> at Jahangirnagar University. My experience combines technical proficiency with problem-solving and strategic thinking to deliver robust, real-world web solutions.
+</p>
+
                     
                     <div class="skills">
+                        <span class="skill">HTML/CSS</span>
+                        <span class="skill">JavaScript</span>
+                        <span class="skill">React</span>
                         <span class="skill">Python</span>
                         <span class="skill">Django</span>
-                        <span class="skill">React</span>
-                        <span class="skill">JavaScript</span>
-                        <span class="skill">HTML/CSS</span>
-                        <span class="skill">Data Analysis</span>
-                        <span class="skill">Excel</span>
-                        <span class="skill">R</span>
-                        <span class="skill">SPSS</span>
-                        <span class="skill">STATA</span>
                         <span class="skill">SQL</span>
+                        <span class="skill">Excel</span>
+                        <span class="skill">Overleaf</span>
                     </div>
                 </div>
                 <div class="about-image">
@@ -1027,7 +1097,17 @@
                     </div>
                     <div class="project-info">
                         <h3>E Learning Website</h3>
-                        <p>Full-stack e-learning platform with user authentication, course management, and interactive quizzes.</p>
+<ul style="list-style-type: disc; padding-left: 20px;">
+    <li>Full-Stack Web Application with user authentication and course management.</li>
+    <li>Interactive quizzes for student engagement.</li>
+    <li>Programming utilities supporting learning and exercises.</li>
+    <li>Tutorials to guide users through courses.</li>
+    <li>Excel-based Data Analysis with click-based operations.</li>
+    <li>Complete result management system for schools, colleges, and universities.</li>
+    <li>MCQ exams with automated scoring and ranking.</li>
+    <li>PDF collection with user upload and access functionality.</li>
+</ul>
+
                         <div class="project-tech">
                             <span class="tech-tag">Django</span>
                             <span class="tech-tag">PostgreSQL</span>
@@ -1052,21 +1132,22 @@
                         <p>A platform for alumni to connect, share resources, and collaborate on projects.</p>
                         <div class="project-tech">
                             <span class="tech-tag">Django</span>
-                            <span class="tech-tag">SQLite</span>
+                            <span class="tech-tag">PostgreSQL</span>
                         </div>
                         <a href="https://sscan.top" class="btn" target="_blank">Visit Website</a>
                     </div>
                 </div>
+                <!--
                 <div class="project-card">     
                     <div class="project-img">
                         <img src="assets/jubsc4.png" alt="Alumni Network Project" style="width:100%;height:100%;object-fit:cover;">
-                        <!--
+                        
                         <div class="project-overlay">
                             <div class="project-links">
                                 <a href="https://sscan.top" class="project-link" target="_blank"><i class="fas fa-external-link-alt"></i></a>
                                 <a href="https://github.com/rezasdsju" class="project-link" target="_blank"><i class="fab fa-github"></i></a>
                             </div>
-                        </div>-->
+                        </div>
                     </div>
                     <div class="project-info">
                         <h3>E-commerce Marketplace</h3>
@@ -1080,6 +1161,7 @@
                         <a href="#" class="btn" target="_blank">Visit Website</a>
                     </div>
                 </div>
+                -->
             </div>
         </div>
     </section>
@@ -1104,7 +1186,7 @@
                             <span class="stat-label">Repositories</span>
                         </div>
                         <div class="stat">
-                            <span class="stat-value">100+</span>
+                            <span class="stat-value">1000+</span>
                             <span class="stat-label">Commits</span>
                         </div>
                     </div>
@@ -1164,7 +1246,7 @@
                         <i class="fas fa-code"></i>
                     </div>
                     <h3>LeetCode</h3>
-                    <p>View my algorithm and data structure solutions. Check my contest ratings and problem-solving progress.</p>
+                    <p>View my algorithm and data structure solutions.</p>
                     <div class="profile-stats">
                         <div class="stat">
                             <span class="stat-value">15+</span>
@@ -1179,6 +1261,29 @@
                     <a href="https://leetcode.com/rezasdsju" class="profile-link" target="_blank">
                         <i class="fas fa-code"></i>
                         Visit LeetCode
+                    </a>
+                </div>
+
+                <!-- WhatsApp Profile Card -->
+                <div class="profile-card whatsapp">
+                    <div class="profile-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>WhatsApp</h3>
+                    <p>Contact me directly on WhatsApp for quick communication and instant responses.</p>
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <span class="stat-value">24/7</span>
+                            <span class="stat-label">Available</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">Instant</span>
+                            <span class="stat-label">Response</span>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/8801722292603" class="profile-link" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        Chat on WhatsApp
                     </a>
                 </div>
             </div>
@@ -1219,8 +1324,18 @@
                             <i class="fas fa-phone"></i>
                         </div>
                         <div class="contact-details">
-                            <h3>Phone</h3>
+                            <h3>Phone / WhatsApp</h3>
                             <p>+880 1722292603</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Direct WhatsApp</h3>
+                            <a href="https://wa.me/8801722292603" target="_blank" style="color: var(--secondary); font-weight: 600;">Click to Chat on WhatsApp</a>
                         </div>
                     </div>
                     
@@ -1230,7 +1345,7 @@
                         </div>
                         <div class="contact-details">
                             <h3>Education</h3>
-                            <p>Jahangirnagar University<br>Statistics & Data Science</p>
+                            <p>Statistics & Data Science,<br> Jahangirnagar University</p>
                         </div>
                     </div>
                 </div>
@@ -1274,12 +1389,11 @@
             <div class="footer-content">
                 <div class="footer-about">
                     <h3>Rezaul Karim Rifat</h3>
-                    <p>Web Developer & Data Analyst passionate about creating innovative solutions and transforming data into actionable insights.</p>
+                    <p>Passionate Full-Stack Developer</p></p>
                     <div class="social-links">
                         <a href="https://github.com/rezasdsju" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
                         <a href="https://www.linkedin.com/in/rezaul-karim-rifat-229309296/" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                        
-                        
+                        <a href="https://wa.me/8801722292603" class="social-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 
@@ -1297,10 +1411,9 @@
                 <div class="footer-links">
                     <h4>Skills</h4>
                     <ul>
-                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Frontend Development with React</a></li>
+                        <li><a href="#">Backend Development with Django</a></li>
                         <li><a href="#">Data Analysis</a></li>
-                        <li><a href="#">Python Programming</a></li>
-                        <li><a href="#">React Development</a></li>
                     </ul>
                 </div>
             </div>
@@ -1316,6 +1429,14 @@
         <i class="fas fa-arrow-up"></i>
     </div>
 
+
+
+<!-- WhatsApp Floating Button -->
+<div class="whatsapp-float">
+    <a href="https://wa.me/8801722292603" target="_blank" class="whatsapp-link">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</div>    
     <script>
         // Mobile Navigation Toggle
         const hamburger = document.querySelector('.hamburger');
